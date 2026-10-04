@@ -1,0 +1,15 @@
+{
+  "name": "Ing. Massimo De Masi Studio",
+  "short_name": "De Masi Studio",
+  "description": "Area clienti: appuntamenti, quesiti, pratiche e novità dello studio.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f6f7f5",
+  "theme_color": "#0d6b80",
+  "lang": "it",
+  "icons": [
+    {"src": "icon-192.png", "sizes": "192x192", "type": "image/png"},
+    {"src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable"}
+  ]
+}
