@@ -110,8 +110,8 @@ section+section{border-top:1px solid var(--rule)}
 .scope li{padding-left:16px;position:relative}
 .scope li::before{content:"";position:absolute;left:0;top:.62em;width:7px;height:7px;background:var(--accent)}
 .titleblock{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--ink);margin:auto -24px -22px;}
-.titleblock div{padding:10px 14px;border-right:1px solid var(--ink)}
-.titleblock div:last-child{border-right:0}
+.titleblock>div{padding:10px 14px;border-right:1px solid var(--ink)}
+.titleblock>div:last-child{border-right:0}
 .titleblock .v{font-family:var(--mono);font-size:.88rem;font-variant-numeric:tabular-nums}
 .note{margin-top:18px;color:var(--muted);font-size:.9rem}
 
@@ -158,12 +158,13 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
   <div class="wrap hero">
     <figure class="slides" aria-label="Progetti dello studio">
         <div class="frame">
-          <img class="on" src="img/campi-bisenzio-4-unita-artigianali.jpg" alt="Rendering del complesso di 4 unità artigianali a Campi Bisenzio" data-cap="Campi Bisenzio · 4 nuove unità artigianali, progetto impiantistico integrato">
+          <img class="on" src="img/calenzano-14-unita-residenziali.jpg" alt="Rendering del complesso di 14 unità residenziali nZEB a Calenzano" data-cap="Calenzano · 14 nuove unità residenziali nZEB">
+          <img src="img/campi-bisenzio-4-unita-artigianali.jpg" alt="Rendering del complesso di 4 unità artigianali a Campi Bisenzio" data-cap="Campi Bisenzio · 4 nuove unità artigianali, progetto impiantistico integrato">
           <img src="img/prato-3-unita-residenziali.jpg" alt="Rendering del prospetto frontale di 3 unità residenziali a Prato" data-cap="Prato · 3 nuove unità residenziali ad alta prestazione acustica e termica">
           <img src="img/prato-schema-impianto.jpg" alt="Rendering dello schema dell'impianto termico con pompa di calore e accumuli" data-cap="Prato · schema dell'impianto termico a bassa temperatura">
           <img src="img/prato-3-unita-residenziali-retro.jpg" alt="Rendering del prospetto posteriore di 3 unità residenziali a Prato" data-cap="Prato · 3 unità residenziali, prospetto posteriore">
         </div>
-        <div class="slides-bar"><figcaption class="label" id="slide-cap">Campi Bisenzio · 4 nuove unità artigianali, progetto impiantistico integrato</figcaption><div class="dots" id="dots"></div></div>
+        <div class="slides-bar"><figcaption class="label" id="slide-cap">Calenzano · 14 nuove unità residenziali nZEB</figcaption><div class="dots" id="dots"></div></div>
       </figure>
     <div class="hero-text">
         <h1>Impianti, dal <em>concept</em> al <em>commissioning</em>. Insieme.</h1>
@@ -177,6 +178,29 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
         <h2>Progetti</h2>
         <span class="label">2026</span>
       </div>
+
+      <article class="project">
+        <figure><img src="img/calenzano-14-unita-residenziali.jpg" alt="Rendering del complesso di 14 unità residenziali a Calenzano, con terrazze verdi e autorimessa interrata"></figure>
+        <div class="body">
+          <div class="label">Calenzano (FI) · Residenziale</div>
+          <h3>14 nuove unità residenziali nZEB</h3>
+          <p>Piano di recupero di un'area ex cava: un nuovo complesso di 14 appartamenti, con autorimessa interrata su due livelli e una nuova strada di accesso.</p>
+          <ul class="scope">
+            <li>Impianto termico: pompa di calore per riscaldamento e raffrescamento, pompa di calore dedicata all'acqua calda sanitaria</li>
+            <li>Fotovoltaico da 2,5 kWp per ogni unità</li>
+            <li>Impianto elettrico delle parti comuni: autorimessa interrata, centrale idrica, illuminazione LED e di emergenza</li>
+            <li>Illuminazione pubblica della nuova strada: 15 punti luce LED, calcolo illuminotecnico secondo UNI EN 13201</li>
+            <li>Verifica energetica (Legge 10) e dei requisiti acustici passivi</li>
+            <li>Direzione lavori degli impianti termici</li>
+          </ul>
+          <p>Risultato: edifici a energia quasi zero, con prestazioni dell'involucro e degli impianti ben oltre i limiti di legge.</p>
+          <div class="titleblock">
+            <div><div class="label">Commessa</div><div class="v">017-26</div></div>
+            <div><div class="label">Classe</div><div class="v">nZEB</div></div>
+            <div><div class="label">Fotovoltaico</div><div class="v">14 × 2,5 kWp</div></div>
+          </div>
+        </div>
+      </article>
 
       <article class="project">
         <figure><img src="img/prato-3-unita-residenziali.jpg" alt="Rendering del prospetto frontale delle 3 unità residenziali a Prato"></figure>
@@ -219,6 +243,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
           </div>
         </div>
       </article>
+      <p class="note">Le immagini dei progetti sono rendering realizzati con l'intelligenza artificiale, a scopo illustrativo.</p>
     </div>
   </section>
 
@@ -281,7 +306,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 
 <footer>
   <div class="wrap">
-    <span>Ing. Massimo De Masi Studio · P.IVA 01856990971</span>
+    <span>Ing. Massimo De Masi Studio · P.IVA 01856990971 · Immagini dei progetti realizzate con AI</span>
     <span><a href="https://www.instagram.com/ingmassimodemasistudio/" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.linkedin.com/in/massimo-de-masi-6a910573/" target="_blank" rel="noopener">LinkedIn</a> · ingdemasi.com</span>
   </div>
 </footer>
