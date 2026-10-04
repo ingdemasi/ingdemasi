@@ -124,6 +124,7 @@ section+section{border-top:1px solid var(--rule)}
 .ac-link:last-child{border-bottom:1px solid var(--rule)}
 .ac-link b{display:block;font-family:var(--display);font-size:1.25rem;font-weight:600;color:var(--accent)}
 .ac-link span{font-size:.9rem;color:var(--muted)}
+.ac-note{font-size:.92rem;color:var(--muted);margin:14px 0 0}
 .contacts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}
 .contacts h3{font-size:1.3rem;margin-bottom:8px}
 .contacts p{margin:0;font-size:.95rem}
@@ -306,6 +307,20 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
           <a class="ac-link" href="app/#appuntamento"><b>Prendi appuntamento</b><span>In studio, sopralluogo o videochiamata</span></a>
           <a class="ac-link" href="app/#domanda"><b>Fai una domanda</b><span>Via WhatsApp o email</span></a>
           <a class="ac-link" href="app/"><b>Usa l'app sul telefono</b><span>Aggiungila alla schermata Home</span></a>
+          <p class="ac-note">Sei un collaboratore o uno studio partner? Vai all'<a href="#area-partner">Area partner</a>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="area-partner">
+    <div class="wrap">
+      <div class="sec-head"><h2>Area partner</h2><span class="label">Collaboratori e studi</span></div>
+      <div class="ac">
+        <div class="ac-login" data-area-partner></div>
+        <div class="ac-side">
+          <p>Spazio riservato ai collaboratori e agli studi con cui lavoro: con le credenziali fornite dallo studio accedi alla cartella condivisa dei progetti in comune e puoi chiedere un incontro o inviarmi una domanda tecnica.</p>
+          <p class="ac-note">Vuoi collaborare con lo studio? <a href="#contatti">Contattami</a>.</p>
         </div>
       </div>
     </div>
@@ -332,7 +347,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 <footer>
   <div class="wrap">
     <span>Ing. Massimo De Masi Studio · P.IVA 01856990971 · Immagini pubblicate sul sito realizzate con AI</span>
-    <span><a href="https://www.instagram.com/ingmassimodemasistudio/" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.linkedin.com/in/massimo-de-masi-6a910573/" target="_blank" rel="noopener">LinkedIn</a> · ingdemasi.com</span>
+    <span><a href="#area-clienti">Area clienti</a> · <a href="#area-partner">Area partner</a> · <a href="https://www.instagram.com/ingmassimodemasistudio/" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.linkedin.com/in/massimo-de-masi-6a910573/" target="_blank" rel="noopener">LinkedIn</a> · ingdemasi.com</span>
   </div>
 </footer>
 <script src="app/auth.js"></script>
