@@ -82,9 +82,9 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 .about .lead{font-size:1.12rem}
 /* cartiglio */
 .cartiglio{margin-top:28px;border:1.5px solid var(--ink);background:var(--sheet);display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
-.cartiglio div{padding:12px 14px;border-right:1px solid var(--ink);min-width:0}
-.cartiglio div:last-child{border-right:0}
-.cartiglio .v{font-family:var(--mono);font-size:.95rem;font-weight:500;margin-top:4px;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.cartiglio>div{padding:12px 14px;border-right:1px solid var(--ink);min-width:0;display:flex;flex-direction:column;gap:10px}
+.cartiglio>div:last-child{border-right:0}
+.cartiglio .v{font-family:var(--mono);font-size:.95rem;font-weight:500;margin-top:auto;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
 
 section{padding-block:48px}
 section+section{border-top:1px solid var(--rule)}
@@ -128,8 +128,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
   .intro-grid{grid-template-columns:1fr;gap:28px}
   .frame,.hero .frame{aspect-ratio:16/6}
   .cartiglio{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .cartiglio div:nth-child(2){border-right:0}
-  .cartiglio div:nth-child(-n+2){border-bottom:1px solid var(--ink)}
+  .cartiglio>div:nth-child(2){border-right:0}
+  .cartiglio>div:nth-child(-n+2){border-bottom:1px solid var(--ink)}
   .project{grid-template-columns:1fr}
   .project figure{border-right:0;border-bottom:1.5px solid var(--ink)}
   .contacts{grid-template-columns:1fr}
