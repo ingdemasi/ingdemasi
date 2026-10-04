@@ -94,24 +94,7 @@ footer{font-size:.78rem;color:var(--muted);text-align:center;padding:4px 16px 18
   <h1 id="h-home">Buongiorno<span id="hello-name"></span>.</h1>
   <p class="lead">Da qui puoi prendere appuntamento, farmi una domanda e consultare i documenti della tua pratica.</p>
 
-  <div class="card" id="pratica-card">
-    <div class="label">La mia pratica</div>
-    <div id="pratica-on" hidden>
-      <h2 id="pratica-title">La tua cartella</h2>
-      <div class="status"><span class="dot"></span><span>Documenti, elaborati e aggiornamenti sono nella tua cartella riservata.</span></div>
-      <a class="btn primary" id="pratica-link" href="#" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24"><path d="M3 7h6l2 2h10v10H3z"/></svg>Apri la mia cartella</a>
-      <p class="hint">Il link è personale: non condividerlo con altri. <a href="#" id="pratica-reset">Cambia link</a></p>
-    </div>
-    <div id="pratica-off">
-      <h2>Collega la tua pratica</h2>
-      <p>Lo studio ti invia un link personale alla cartella della tua pratica. Aprilo una volta da questo telefono: l'app lo ricorderà.</p>
-      <label for="pratica-input">Oppure incolla qui il link ricevuto</label>
-      <input id="pratica-input" type="url" inputmode="url" placeholder="https://www.dropbox.com/…" autocomplete="off">
-      <button class="btn" id="pratica-save" type="button" style="margin-top:10px">Salva il link</button>
-      <p class="hint" id="pratica-msg" role="status"></p>
-    </div>
-  </div>
+  <div class="card" id="pratica-card" data-area-clienti></div>
 
   <div class="grid">
     <button class="tile" data-go="appuntamento" type="button"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><b>Prendi appuntamento</b></button>
@@ -197,6 +180,7 @@ footer{font-size:.78rem;color:var(--muted);text-align:center;padding:4px 16px 18
   <button type="button" data-go="novita"><svg viewBox="0 0 24 24"><path d="M5 4h14v16H5zM8 8h8M8 12h8M8 16h5"/></svg>Novità</button>
 </div></nav>
 
+<script src="auth.js"></script>
 <script>
 (function(){
   /* Configurazione dello studio */
@@ -217,34 +201,12 @@ footer{font-size:.78rem;color:var(--muted);text-align:center;padding:4px 16px 18
     if(id==='novita')loadNews();
   }
   document.addEventListener('click',function(e){var b=e.target.closest('[data-go]');if(b){e.preventDefault();go(b.dataset.go);}});
+  var start=location.hash.slice(1);
+  if(start&&views.some(function(v){return v.id===start;})){setTimeout(function(){go(start);},0);history.replaceState(null,'',location.pathname);}
 
-  /* Link personale alla pratica: arriva come ingdemasi.com/app/#p=<link>&n=<nome> */
-  var pOn=document.getElementById('pratica-on'),pOff=document.getElementById('pratica-off');
-  function validLink(u){try{var x=new URL(u);return x.protocol==='https:'&&/(^|\.)dropbox\.com$/.test(x.hostname);}catch(e){return false;}}
-  function showPratica(){
-    var link=read('pratica-link'),name=read('pratica-nome');
-    if(link&&validLink(link)){
-      document.getElementById('pratica-link').href=link;
-      document.getElementById('pratica-title').textContent=name?('Pratica di '+name):'La tua cartella';
-      document.getElementById('hello-name').textContent=name?(', '+name):'';
-      pOn.hidden=false;pOff.hidden=true;
-    }else{pOn.hidden=true;pOff.hidden=false;document.getElementById('hello-name').textContent='';}
-  }
-  (function fromHash(){
-    if(!location.hash||location.hash.indexOf('p=')<0)return;
-    var q=new URLSearchParams(location.hash.slice(1)),p=q.get('p'),n=q.get('n');
-    if(p&&validLink(p)){store('pratica-link',p);if(n)store('pratica-nome',n.slice(0,40));}
-    history.replaceState(null,'',location.pathname);
-  })();
-  document.getElementById('pratica-save').addEventListener('click',function(){
-    var v=document.getElementById('pratica-input').value.trim(),m=document.getElementById('pratica-msg');
-    if(!validLink(v)){m.textContent='Il link deve essere quello di Dropbox ricevuto dallo studio.';return;}
-    store('pratica-link',v);m.textContent='';showPratica();
-  });
-  document.getElementById('pratica-reset').addEventListener('click',function(e){
-    e.preventDefault();store('pratica-link',null);store('pratica-nome',null);showPratica();
-  });
-  showPratica();
+  /* Area riservata (auth.js): saluto per nome dopo l'accesso */
+  document.addEventListener('dm-login',function(e){var n=e.detail&&e.detail.nome;document.getElementById('hello-name').textContent=n?(', '+n.split(' ')[0]):'';});
+  document.addEventListener('dm-logout',function(){document.getElementById('hello-name').textContent='';});
 
   /* Prenotazione online (se configurata) */
   if(BOOKING_URL){

@@ -117,6 +117,13 @@ section+section{border-top:1px solid var(--rule)}
 .note{margin-top:18px;color:var(--muted);font-size:.9rem}
 
 /* contatti */
+.ac{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px;align-items:start}
+.ac-login{background:var(--sheet);border:1.5px solid var(--ink);padding:20px 22px}
+.ac-side p{margin:0 0 14px}
+.ac-link{display:block;padding:12px 0;border-top:1px solid var(--rule);color:var(--ink);text-decoration:none}
+.ac-link:last-child{border-bottom:1px solid var(--rule)}
+.ac-link b{display:block;font-family:var(--display);font-size:1.25rem;font-weight:600;color:var(--accent)}
+.ac-link span{font-size:.9rem;color:var(--muted)}
 .contacts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}
 .contacts h3{font-size:1.3rem;margin-bottom:8px}
 .contacts p{margin:0;font-size:.95rem}
@@ -133,6 +140,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
   .project{grid-template-columns:1fr}
   .project figure{border-right:0;border-bottom:1.5px solid var(--ink)}
   .contacts{grid-template-columns:1fr}
+  .ac{grid-template-columns:1fr}
   nav{gap:14px}
 }
 @media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
@@ -151,7 +159,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
       <a href="#chi-sono">Chi sono</a>
       <a href="#servizi">Servizi</a>
       <a href="#contatti">Contatti</a>
-      <a href="app/">Area clienti</a>
+      <a href="#area-clienti">Area clienti</a>
     </nav>
   </div>
 </header>
@@ -288,6 +296,21 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
     </div>
   </section>
 
+  <section id="area-clienti">
+    <div class="wrap">
+      <div class="sec-head"><h2>Area clienti</h2><span class="label">Riservata</span></div>
+      <div class="ac">
+        <div class="ac-login" data-area-clienti></div>
+        <div class="ac-side">
+          <p>Se sei un cliente dello studio, con codice e password trovi qui i documenti e gli aggiornamenti della tua pratica. Da qui puoi anche prendere appuntamento o farmi una domanda.</p>
+          <a class="ac-link" href="app/#appuntamento"><b>Prendi appuntamento</b><span>In studio, sopralluogo o videochiamata</span></a>
+          <a class="ac-link" href="app/#domanda"><b>Fai una domanda</b><span>Via WhatsApp o email</span></a>
+          <a class="ac-link" href="app/"><b>Usa l'app sul telefono</b><span>Aggiungila alla schermata Home</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="contatti">
     <div class="wrap">
       <div class="sec-head"><h2>Contatti</h2></div>
@@ -312,6 +335,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
     <span><a href="https://www.instagram.com/ingmassimodemasistudio/" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.linkedin.com/in/massimo-de-masi-6a910573/" target="_blank" rel="noopener">LinkedIn</a> · ingdemasi.com</span>
   </div>
 </footer>
+<script src="app/auth.js"></script>
 <script>
 (function(){
   var imgs=[].slice.call(document.querySelectorAll('.frame img')),cap=document.getElementById('slide-cap'),dots=document.getElementById('dots'),i=0,timer;
