@@ -30,10 +30,10 @@
       who:function(s){return s.nome?('Pratica di '+s.nome):'La tua pratica';},sub:function(s){return s.commessa?('Commessa '+s.commessa):'';},
       ok:'Documenti, elaborati e aggiornamenti della tua pratica sono nella tua cartella riservata.',open:'Apri la mia cartella',up:'Carica documenti per lo studio',
       help:'Codice e password te li comunica lo studio all’avvio della pratica. Li hai persi? Scrivimi o chiamami.',actions:false},
-    partner:{db:'partner.json',key:'dm-area-partner',salt:'dm-partner:',title:'Accesso partner',codeLabel:'Codice partner',codePh:'Es. PA-001',
-      who:function(s){return s.nome||'Area partner';},sub:function(s){return s.ruolo||'';},
-      ok:'Nella cartella condivisa trovi elaborati, documenti e materiale di lavoro dei progetti in comune.',open:'Apri la cartella condivisa',up:'Carica file per lo studio',
-      help:'Le credenziali di accesso te le fornisce lo studio. Problemi di accesso? Scrivimi o chiamami.',actions:true}
+    partner:{db:'partner.json',key:'dm-area-partner',salt:'dm-partner:',title:'Accesso partner',codeLabel:'Numero commessa',codePh:'Es. 017-26',
+      who:function(s){return 'Commessa '+(s.commessa||'');},sub:function(s){return [s.progetto,s.nome].filter(Boolean).join(' \u00b7 ');},
+      ok:'Nella cartella di lavoro della commessa trovi elaborati, documenti e materiale condiviso.',open:'Apri la cartella di lavoro',up:'Carica file per lo studio',
+      help:'Numero di commessa e password te li comunica lo studio per ogni collaborazione.',actions:true}
   };
   function save(K,v){try{if(v)localStorage.setItem(K.key,JSON.stringify(v));else localStorage.removeItem(K.key);}catch(e){}}
   function load(K){try{return JSON.parse(localStorage.getItem(K.key)||'null');}catch(e){return null;}}
@@ -52,10 +52,15 @@
     ]).then(function(res){
       var db=res[0],rec=db.clients&&db.clients[hex(res[1])];
       if(!rec)throw new Error('cred');
+      var recs=Array.isArray(rec)?rec:[rec];
       return crypto.subtle.importKey('raw',enc.encode(pass),'PBKDF2',false,['deriveKey']).then(function(base){
-        return crypto.subtle.deriveKey({name:'PBKDF2',salt:b64(rec.s),iterations:db.iter||200000,hash:'SHA-256'},base,{name:'AES-GCM',length:256},false,['decrypt']);
-      }).then(function(key){
-        return crypto.subtle.decrypt({name:'AES-GCM',iv:b64(rec.i)},key,b64(rec.d));
+        /* piu' accessi sulla stessa commessa: vale quello che la password apre */
+        return recs.reduce(function(p,r){
+          return p.catch(function(){
+            return crypto.subtle.deriveKey({name:'PBKDF2',salt:b64(r.s),iterations:db.iter||200000,hash:'SHA-256'},base,{name:'AES-GCM',length:256},false,['decrypt'])
+              .then(function(key){return crypto.subtle.decrypt({name:'AES-GCM',iv:b64(r.i)},key,b64(r.d));});
+          });
+        },Promise.reject());
       }).then(function(plain){return JSON.parse(new TextDecoder().decode(plain));},function(){throw new Error('cred');});
     });
   }
@@ -82,14 +87,15 @@
         '<a class="dm-btn dm-primary" href="'+esc(safeUrl(s.link))+'" target="_blank" rel="noopener">'+K.open+'</a>'+
         (up?'<a class="dm-btn" href="'+esc(up)+'" target="_blank" rel="noopener">'+K.up+'</a>':'')+
         (K.actions?actionsHtml(id):'')+
-        '<p class="dm-hint">Accesso salvato su questo dispositivo. <a href="#" class="dm-out">Esci</a></p></div>';
+        '<p class="dm-hint">Accesso salvato su questo dispositivo.'+(K.actions?' Per un\u2019altra commessa esci e accedi con il nuovo numero.':'')+' <a href="#" class="dm-out">Esci</a></p></div>';
       box.querySelector('.dm-out').addEventListener('click',function(e){e.preventDefault();save(K,null);render(box);});
       if(K.actions){
         box.querySelector('.dm-row').addEventListener('click',function(e){
           var b=e.target.closest('[data-ch]');if(!b)return;
           var tipo=box.querySelector('#'+id+'t').value,m=box.querySelector('#'+id+'m').value.trim(),out=box.querySelector('.dm-sent');
           if(!m){out.textContent='Scrivi il messaggio.';return;}
-          var subj=tipo+' – '+(s.nome||'partner'),body=['Da: '+(s.nome||'')+(s.ruolo?(' ('+s.ruolo+')'):''),'',m].join('\n');
+          var subj=tipo+' – commessa '+(s.commessa||'')+' – '+(s.nome||'partner'),
+              body=['Da: '+(s.nome||'')+(s.ruolo?(' ('+s.ruolo+')'):''),'Commessa: '+(s.commessa||'')+(s.progetto?(' – '+s.progetto):''),'',m].join('\n');
           if(b.dataset.ch==='wa')window.open('https://wa.me/'+PHONE+'?text='+encodeURIComponent(subj+'\n'+body),'_blank','noopener');
           else location.href='mailto:'+EMAIL+'?subject='+encodeURIComponent(subj)+'&body='+encodeURIComponent(body);
           out.textContent='Si è aperta l’app per l’invio: controlla e premi Invia.';
