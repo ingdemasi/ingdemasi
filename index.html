@@ -42,6 +42,7 @@ header.top .wrap{display:flex;align-items:center;justify-content:space-between;g
 nav{display:flex;gap:18px;flex-wrap:wrap}
 nav a{color:var(--ink);text-decoration:none;font-size:.92rem;font-weight:500}
 nav a:hover,nav a:focus-visible{color:var(--accent)}
+nav .ns{display:none}
 a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 
 /* chi sono */
@@ -142,7 +143,10 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
   .project figure{border-right:0;border-bottom:1.5px solid var(--ink)}
   .contacts{grid-template-columns:1fr}
   .ac{grid-template-columns:1fr}
-  nav{gap:14px}
+  nav{gap:4px 11px}
+  nav a{font-size:.86rem}
+  nav .nl{display:none}
+  nav .ns{display:inline}
 }
 @media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
 </style>
@@ -160,7 +164,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
       <a href="#chi-sono">Chi sono</a>
       <a href="#servizi">Servizi</a>
       <a href="#contatti">Contatti</a>
-      <a href="#area-clienti">Area clienti</a>
+      <a href="#area-clienti"><span class="nl">Area clienti</span><span class="ns">Clienti</span></a>
+      <a href="#area-partner"><span class="nl">Area partner</span><span class="ns">Partner</span></a>
     </nav>
   </div>
 </header>
