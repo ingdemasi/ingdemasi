@@ -65,7 +65,7 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 @media (prefers-reduced-motion:reduce){.frame img{transition:none}}
 
 .me{display:flex;align-items:center;gap:14px;margin-bottom:18px}
-.me img{width:72px;height:72px;border-radius:50%;object-fit:cover;border:1.5px solid var(--ink);flex:none}
+.me img{width:84px;height:84px;border-radius:50%;object-fit:cover;border:1.5px solid var(--ink);flex:none}
 .me b{display:block;font-family:var(--display);font-size:1.3rem;font-weight:600;line-height:1.1}
 .story{margin-top:26px;padding-left:18px;border-left:2px solid var(--accent)}
 .story .label{margin-bottom:8px}
@@ -78,6 +78,9 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 .hero h1 em{font-style:normal;color:var(--accent)}
 .cta{display:inline-block;padding:12px 20px;border:1.5px solid var(--ink);color:var(--ink);text-decoration:none;font-weight:600;font-size:.95rem;white-space:nowrap}
 .cta:hover{background:var(--ink);color:var(--paper)}
+.about-grid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:40px;align-items:start}
+.studio-foto{margin:0;border:1.5px solid var(--ink);background:var(--sheet)}
+.studio-foto img{display:block;width:100%;height:auto;aspect-ratio:3/4;object-fit:cover}
 .about{max-width:68ch}
 .about p{margin:0 0 14px}
 .about .lead{font-size:1.12rem}
@@ -143,6 +146,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
   .project figure{border-right:0;border-bottom:1.5px solid var(--ink)}
   .contacts{grid-template-columns:1fr}
   .ac{grid-template-columns:1fr}
+  .about-grid{grid-template-columns:1fr;gap:24px}
+  .studio-foto{max-width:420px}
   nav{gap:4px 11px}
   nav a{font-size:.86rem}
   nav .nl{display:none}
@@ -266,8 +271,9 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
   <section id="chi-sono">
     <div class="wrap">
       <div class="sec-head"><h2>Chi sono</h2></div>
+      <div class="about-grid">
       <div class="about">
-        <div class="me"><img src="img/massimo-de-masi.jpg" alt="Ing. Massimo De Masi"><div><b>Ing. Massimo De Masi</b><span class="label">Ingegnere meccanico</span></div></div>
+        <div class="me"><img src="img/massimo-de-masi.jpg?v=2" alt="Ing. Massimo De Masi"><div><b>Ing. Massimo De Masi</b><span class="label">Ingegnere meccanico</span></div></div>
         <p class="lead">Massimo De Masi, Ingegnere meccanico. Progetto soluzioni per impianti meccanici, elettrici, acustici e antincendio, per aziende, privati e pubbliche amministrazioni.</p>
         <p>Seguo i progetti dal loro concepimento alla messa in funzione, curando in particolare l'integrazione tra i diversi impianti per ottenere la massima efficienza.</p>
         <div class="story">
@@ -276,6 +282,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
           <p>Poi è arrivata la mia avventura da libero professionista. In 25 anni, grazie alla fiducia di clienti che mi seguono da sempre, ho maturato esperienza affrontando sfide sempre più difficili, ma anche avvincenti.</p>
           <p>Oggi la progettazione è parte della mia vita, e ogni giorno mi metto in gioco per offrire ai miei clienti un servizio migliore.</p>
         </div>
+      </div>
+      <figure class="studio-foto"><img src="img/massimo-de-masi-studio.jpg" alt="L'Ing. Massimo De Masi nello studio" loading="lazy"></figure>
       </div>
     <div class="cartiglio" role="list" aria-label="Iscrizioni e abilitazioni">
       <div role="listitem"><div class="label">Ordine Ingegneri Prato</div><div class="v">n° 774</div></div>
