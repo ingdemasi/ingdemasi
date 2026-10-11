@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /app/clienti.json
+Disallow: /app/partner.json
+
+Sitemap: https://www.ingdemasi.com/sitemap.xml
