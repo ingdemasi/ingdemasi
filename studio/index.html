@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Area studio | Ing. Massimo De Masi</title>
+<link rel="icon" href="/img/logo.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+:root{--paper:#f6f7f5;--sheet:#fff;--ink:#1d2326;--muted:#5b666b;--rule:#d6dbd9;--accent:#0d6b80;--warn:#b8432f;
+--display:"Barlow Condensed","Arial Narrow",sans-serif;--body:"IBM Plex Sans",system-ui,sans-serif;--mono:"IBM Plex Mono",ui-monospace,monospace}
+@media (prefers-color-scheme:dark){:root{--paper:#121718;--sheet:#1a2022;--ink:#e7ecea;--muted:#9aa6a9;--rule:#2c3537;--accent:#5cb6c9;--warn:#e07a63;color-scheme:dark}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);line-height:1.55}
+.wrap{max-width:720px;margin:0 auto;padding:40px 20px}
+a.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink);margin-bottom:36px}
+a.brand img{width:44px;height:44px}
+@media (prefers-color-scheme:dark){a.brand img{filter:invert(1)}}
+a.brand b{font-family:var(--display);font-weight:700;font-size:1.3rem;letter-spacing:.02em}
+.label{font-family:var(--mono);font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+h1{font-family:var(--display);font-weight:700;font-size:2.6rem;line-height:1;margin:8px 0 18px}
+.box{background:var(--sheet);border:1.5px solid var(--ink);padding:22px}
+label{display:block;font-size:.9rem;font-weight:500;margin-bottom:6px}
+input[type=password]{width:100%;font:inherit;padding:12px;border:1.5px solid var(--ink);background:var(--paper);color:var(--ink);font-family:var(--mono);letter-spacing:.06em}
+.row{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:14px}
+button{font:inherit;font-weight:600;padding:12px 20px;border:1.5px solid var(--ink);background:var(--ink);color:var(--paper);cursor:pointer}
+button:hover{background:var(--accent);border-color:var(--accent)}
+.chk{font-size:.88rem;color:var(--muted);display:flex;gap:6px;align-items:center}
+.err{color:var(--warn);font-size:.9rem;min-height:1.4em;margin:10px 0 0}
+.links{list-style:none;margin:0;padding:0;border-top:1px solid var(--rule)}
+.links a{display:block;padding:14px 0;border-bottom:1px solid var(--rule);text-decoration:none;color:var(--ink)}
+.links b{display:block;font-family:var(--display);font-weight:600;font-size:1.35rem;color:var(--accent)}
+.links span{font-size:.9rem;color:var(--muted)}
+.main a{background:var(--sheet);border:1.5px solid var(--ink);padding:18px;margin-bottom:12px}
+.main b{font-size:1.7rem}
+.out{font-size:.85rem;color:var(--muted);margin-top:18px}
+.out a{color:var(--accent)}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <a class="brand" href="/"><img src="/img/logo.png" alt="Logo"><b>ING. MASSIMO DE MASI STUDIO</b></a>
+  <span class="label">Riservato</span>
+  <h1>Area studio</h1>
+  <div id="login" class="box">
+    <form id="f" autocomplete="off">
+      <label for="pw">Password</label>
+      <input type="password" id="pw" autocomplete="current-password" required>
+      <div class="row"><button type="submit">Entra</button><label class="chk"><input type="checkbox" id="rem"> Ricordami su questo dispositivo</label></div>
+      <p class="err" id="err" role="alert"></p>
+    </form>
+  </div>
+  <div id="area" hidden>
+    <ul class="links" id="links"></ul>
+    <p class="out">I collegamenti si aprono solo con il tuo account. <a href="#" id="esci">Esci</a></p>
+  </div>
+</main>
+<script>
+(function(){
+  var BLOB={"s": "lI02IBwnv81FHTu//N57Mg==", "i": "DUVb4M/un14OoXLH", "d": "ruZtjen06WmGxzxpQSyO3iex2hopTTS7KQv4Li2376pukeiiinT7eI6yEMFLw43043hMCEMrxtQst98X1f9FQ96DV22xhyvJCxHXm2jwhUSL/9NblAZHVSmTfbo3fFSqrna1/6sAsFql57M/SBOvdSFNIECiBqnVbQ1owJVjb/RsHytPqlQakTMr0wrzwVvPwvtHtnp1LQl5wC5yXvlokml/Uqocyb5V2cOZ8mjgy7SiQc2YBjUMgifxjs380NLu07mRy9Rb/5bHkaWppU5jTUO3yjhhhI1c5w8KXVfZ94BbulFaUx84bP+ftWl51RHR6OV/qINYeOiMORwODJ1miu3a8yeNTbOdrgzgJMsfP02iC35GcGW2yTL7BCW4f6QA7JWB3GtVdRsSJE5th+21Hk6TSROKcIVjqGZRV1erexTOf9JG+17MyvSZDk3KOwS4+Pp32J77/QgHL5QBiTVHBbcOQ6pa1kubUxxL77JPxAXIGeomWua3FvJ1cvrKifXbt9lF/bZlmEUAHVYQa1XEeqXE8WZqXNQWoY+OrBvDPd3ElC7k8PFNCNNzxQAKiPi4FbKAD4JxYS1JYDrs92M8AuQhelsypIH6TVEwV/vc6wIojRbtfHKEdJUmoL8I0gccwgYr1JmO7f7Ad6Fs3CEsdCWDbQkN0MBDw3vDzuexToodHehno1Ip9ZMT2d/g5JZVwNOhaU4CV02jWLT699F5G849h3t+Astlp+2RIMJkOgfXEyu6UAUAe+wLJOgaC4oPTieit6JW7U+75X0q1H7Bu3BnvbRyAEDjRxwCyHDDU6CIOYKWyXErNCDhApXUDhuKGpKirDpiUYzA5X1ezSuQFD1J/uvX6I5bgxlt68Uvhmk2IesCcsQDdRXvK68pqPIqMbhVhI9zg9Zh5miJEGHX6Z4Ja71E3T24b+26A0n+YGrPcNCMfRUpTUMs2GYawM2MPVd2/YIfMoZEBDn+/lDqeUYvU9++IQ==", "n": 200000};
+  var KEY='dm-area-studio';
+  function b64(s){return Uint8Array.from(atob(s),function(c){return c.charCodeAt(0);});}
+  function esc(s){var d=document.createElement('div');d.textContent=s;return d.innerHTML;}
+  function show(data){
+    document.getElementById('login').hidden=true;
+    var ul=document.getElementById('links');
+    ul.innerHTML=data.links.map(function(l){
+      var ext=/^https?:/.test(l.u);
+      return '<li'+(l.main?' class="main"':'')+'><a href="'+esc(l.u)+'"'+(ext?' target="_blank" rel="noopener"':'')+'><b>'+esc(l.t)+'</b><span>'+esc(l.d)+'</span></a></li>';
+    }).join('');
+    document.getElementById('area').hidden=false;
+  }
+  function unlock(pw){
+    var enc=new TextEncoder();
+    return crypto.subtle.importKey('raw',enc.encode(pw),'PBKDF2',false,['deriveKey']).then(function(base){
+      return crypto.subtle.deriveKey({name:'PBKDF2',salt:b64(BLOB.s),iterations:BLOB.n,hash:'SHA-256'},base,{name:'AES-GCM',length:256},false,['decrypt']);
+    }).then(function(k){return crypto.subtle.decrypt({name:'AES-GCM',iv:b64(BLOB.i)},k,b64(BLOB.d));})
+      .then(function(buf){return JSON.parse(new TextDecoder().decode(buf));});
+  }
+  try{var saved=localStorage.getItem(KEY); if(saved){show(JSON.parse(saved));}}catch(e){}
+  document.getElementById('f').addEventListener('submit',function(e){
+    e.preventDefault();
+    var err=document.getElementById('err'); err.textContent='Verifica in corso…';
+    unlock(document.getElementById('pw').value.trim().toUpperCase()).then(function(data){
+      err.textContent='';
+      if(document.getElementById('rem').checked){try{localStorage.setItem(KEY,JSON.stringify(data));}catch(x){}}
+      show(data);
+    }).catch(function(){err.textContent='Password non corretta.';});
+  });
+  document.getElementById('esci').addEventListener('click',function(e){
+    e.preventDefault(); try{localStorage.removeItem(KEY);}catch(x){}
+    location.reload();
+  });
+})();
+</script>
+</body>
+</html>

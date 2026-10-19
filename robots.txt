@@ -3,5 +3,6 @@ Allow: /
 Disallow: /app/clienti.json
 Disallow: /app/partner.json
 Disallow: /firma/
+Disallow: /studio/
 
 Sitemap: https://www.ingdemasi.com/sitemap.xml
