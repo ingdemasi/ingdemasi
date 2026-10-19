@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Progettazione impianti elettrici, BMS e BACS a Prato e Firenze | Ing. Massimo De Masi</title>
+<meta name="description" content="Progetto di impianti elettrici e speciali, quadri, cabine MT/BT, illuminazione LED e DALI, BMS e BACS per edifici residenziali, artigianali e industriali. Prato, Firenze, Fucecchio.">
+<link rel="icon" href="/img/logo.png">
+<link rel="canonical" href="https://www.ingdemasi.com/servizi/impianti-elettrici-bms/">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0d6b80">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="it_IT">
+<meta property="og:title" content="Progettazione impianti elettrici, BMS e BACS a Prato e Firenze | Ing. Massimo De Masi">
+<meta property="og:description" content="Progetto di impianti elettrici e speciali, quadri, cabine MT/BT, illuminazione LED e DALI, BMS e BACS per edifici residenziali, artigianali e industriali. Prato, Firenze, Fucecchio.">
+<meta property="og:url" content="https://www.ingdemasi.com/servizi/impianti-elettrici-bms/">
+<meta property="og:image" content="https://www.ingdemasi.com/img/campi-bisenzio-stabilimento-uffici.jpg">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Service", "name": "Impianti elettrici, BMS e automazione degli edifici", "serviceType": "Impianti elettrici e BMS", "url": "https://www.ingdemasi.com/servizi/impianti-elettrici-bms/", "description": "Progetto di impianti elettrici e speciali, quadri, cabine MT/BT, illuminazione LED e DALI, BMS e BACS per edifici residenziali, artigianali e industriali. Prato, Firenze, Fucecchio.", "provider": {"@id": "https://www.ingdemasi.com/#studio"}, "areaServed": ["Prato", "Firenze", "Fucecchio", "Empoli", "Pistoia", "Toscana"]}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: una tavola di progetto — testata, cartiglio con le abilitazioni, schede progetto con il riquadro "commessa / revisione" */
+:root{
+  --paper:#f6f7f5; --sheet:#ffffff; --ink:#1d2326; --muted:#5b666b; --rule:#d6dbd9;
+  --accent:#0d6b80; --accent-soft:#e3eff1; --warn:#b8432f;
+  --display:"Barlow Condensed","Arial Narrow",sans-serif;
+  --body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#121718; --sheet:#1a2022; --ink:#e7ecea; --muted:#9aa6a9; --rule:#2c3537;
+  --accent:#5cb6c9; --accent-soft:#1d3135; --warn:#e07a63; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#121718; --sheet:#1a2022; --ink:#e7ecea; --muted:#9aa6a9; --rule:#2c3537;
+  --accent:#5cb6c9; --accent-soft:#1d3135; --warn:#e07a63; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;margin:0}
+.wrap{max-width:1080px;margin:0 auto;padding-inline:20px}
+a{color:var(--accent)}
+h1,h2,h3{font-family:var(--display);font-weight:600;line-height:1.05;margin:0;text-wrap:balance;letter-spacing:.005em}
+.label{font-family:var(--mono);font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+
+/* testata */
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--paper);border-bottom:1px solid var(--rule)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:12px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink)}
+.logo{width:48px;height:48px;display:block}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .logo{filter:invert(1)}}
+:root[data-theme="dark"] .logo{filter:invert(1)}
+.brand b{font-family:var(--display);font-size:1.35rem;font-weight:700;letter-spacing:.02em;display:block;line-height:1}
+.brand span{font-size:.78rem;color:var(--muted)}
+nav{display:flex;gap:18px;flex-wrap:wrap}
+nav a{color:var(--ink);text-decoration:none;font-size:.92rem;font-weight:500}
+nav a:hover,nav a:focus-visible{color:var(--accent)}
+nav .ns{display:none}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+/* chi sono */
+.intro{padding-block:56px 40px}
+.intro-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:28px}
+.intro h1{font-size:clamp(2.6rem,6.5vw,4.6rem);font-weight:700;margin-block:10px 20px}
+.intro h1 em{font-style:normal;color:var(--accent)}
+.intro p{max-width:60ch;margin:0 0 14px;color:var(--ink)}
+.intro p.lead{font-size:1.12rem}
+.slides{margin:0;display:flex;flex-direction:column;gap:10px;max-width:100%}
+.frame{position:relative;width:100%;max-width:100%;aspect-ratio:16/5;overflow:hidden}
+.frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;opacity:0;transition:opacity .9s ease}
+.frame img.on{opacity:1}
+.slides-bar{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.dots{display:flex;gap:8px}
+.ai-note{margin:0;font-size:.78rem;color:var(--muted)}
+.dots button{width:28px;height:6px;padding:0;border:0;background:var(--rule);cursor:pointer}
+.dots button[aria-current="true"]{background:var(--accent)}
+.dots button:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+@media (prefers-reduced-motion:reduce){.frame img{transition:none}}
+
+.me{display:flex;align-items:center;gap:14px;margin-bottom:18px}
+.me img{width:84px;height:84px;border-radius:50%;object-fit:cover;border:1.5px solid var(--ink);flex:none}
+.me b{display:block;font-family:var(--display);font-size:1.3rem;font-weight:600;line-height:1.1}
+.story{margin-top:26px;padding-left:18px;border-left:2px solid var(--accent)}
+.story .label{margin-bottom:8px}
+
+/* hero progetti */
+.hero{padding-block:28px 8px;display:flex;flex-direction:column;gap:22px}
+.hero .frame{aspect-ratio:16/5}
+.hero-text{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap}
+.hero h1{font-size:clamp(2.2rem,5.6vw,4rem);font-weight:700;max-width:18ch}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.cta{display:inline-block;padding:12px 20px;border:1.5px solid var(--ink);color:var(--ink);text-decoration:none;font-weight:600;font-size:.95rem;white-space:nowrap}
+.cta:hover{background:var(--ink);color:var(--paper)}
+.about-grid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:40px;align-items:start}
+.studio-foto{margin:0;border:1.5px solid var(--ink);background:var(--sheet)}
+.studio-foto img{display:block;width:100%;height:auto;aspect-ratio:3/4;object-fit:cover}
+.about{max-width:68ch}
+.about p{margin:0 0 14px}
+.about .lead{font-size:1.12rem}
+/* cartiglio */
+.cartiglio{margin-top:28px;border:1.5px solid var(--ink);background:var(--sheet);display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+.cartiglio>div{padding:12px 14px;border-right:1px solid var(--ink);min-width:0;display:flex;flex-direction:column;gap:10px}
+.cartiglio>div:last-child{border-right:0}
+.cartiglio .v{font-family:var(--mono);font-size:.95rem;font-weight:500;margin-top:auto;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+
+section{padding-block:48px}
+section+section{border-top:1px solid var(--rule)}
+.sec-head{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:28px}
+.sec-head h2{font-size:clamp(2rem,4.5vw,2.8rem)}
+
+/* servizi */
+.band{margin:0 0 28px;display:flex;flex-direction:column;gap:8px}
+.band img{display:block;width:100%;max-width:100%;aspect-ratio:2/1;object-fit:cover;border:1.5px solid var(--ink)}
+.services{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:0;border-top:1px solid var(--rule)}
+.service{padding:18px 18px 20px 0;border-bottom:1px solid var(--rule);min-width:0}
+.service h3{font-size:1.35rem;margin-bottom:6px}
+.service p{margin:0;color:var(--muted);font-size:.93rem}
+.service h3 a{color:var(--ink);text-decoration:none}.service h3 a:hover{color:var(--accent)}
+.service .more{display:inline-block;margin-top:8px;font-family:var(--mono);font-size:.74rem;letter-spacing:.08em;text-transform:uppercase}
+
+/* progetti */
+.project+.project{margin-top:28px}
+.project{background:var(--sheet);border:1.5px solid var(--ink);display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr)}
+.project figure{margin:0;border-right:1.5px solid var(--ink);background:var(--accent-soft);display:flex;align-items:center}
+.project img{display:block;width:100%;height:auto}
+.project .body{padding:22px 24px;display:flex;flex-direction:column;gap:14px;min-width:0}
+.project h3{font-size:1.8rem}
+.project p{margin:0;font-size:.95rem}
+.scope{list-style:none;margin:0;padding:0;display:grid;gap:6px;font-size:.92rem}
+.scope li{padding-left:16px;position:relative}
+.scope li::before{content:"";position:absolute;left:0;top:.62em;width:7px;height:7px;background:var(--accent)}
+.titleblock{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--ink);margin:auto -24px -22px;}
+.titleblock>div{padding:10px 14px;border-right:1px solid var(--ink)}
+.titleblock>div:last-child{border-right:0}
+.titleblock .v{font-family:var(--mono);font-size:.88rem;font-variant-numeric:tabular-nums}
+.note{margin-top:18px;color:var(--muted);font-size:.9rem}
+
+/* contatti */
+.ac{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px;align-items:start}
+.ac-login{background:var(--sheet);border:1.5px solid var(--ink);padding:20px 22px}
+.ac-side p{margin:0 0 14px}
+.ac-link{display:block;padding:12px 0;border-top:1px solid var(--rule);color:var(--ink);text-decoration:none}
+.ac-link:last-child{border-bottom:1px solid var(--rule)}
+.ac-link b{display:block;font-family:var(--display);font-size:1.25rem;font-weight:600;color:var(--accent)}
+.ac-link span{font-size:.9rem;color:var(--muted)}
+.ac-note{font-size:.92rem;color:var(--muted);margin:14px 0 0}
+.contacts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}
+.contacts h3{font-size:1.3rem;margin-bottom:8px}
+.contacts p{margin:0;font-size:.95rem}
+.contacts .mono{font-family:var(--mono);font-size:.92rem;user-select:all}
+footer{border-top:1px solid var(--rule);padding-block:22px;color:var(--muted);font-size:.8rem}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+@media (max-width:820px){
+  .intro-grid{grid-template-columns:1fr;gap:28px}
+  .frame,.hero .frame{aspect-ratio:16/6}
+  .cartiglio{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .cartiglio>div:nth-child(2){border-right:0}
+  .cartiglio>div:nth-child(-n+2){border-bottom:1px solid var(--ink)}
+  .project{grid-template-columns:1fr}
+  .project figure{border-right:0;border-bottom:1.5px solid var(--ink)}
+  .contacts{grid-template-columns:1fr}
+  .ac{grid-template-columns:1fr}
+  .about-grid{grid-template-columns:1fr;gap:24px}
+  .studio-foto{max-width:420px}
+  nav{gap:4px 11px}
+  nav a{font-size:.86rem}
+  nav .nl{display:none}
+  nav .ns{display:inline}
+}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+</style>
+<style>
+.svc-hero{padding-block:36px 8px}
+.svc-hero h1{font-size:clamp(2.3rem,5.6vw,3.8rem);font-weight:700;margin:10px 0 18px;max-width:20ch}
+.svc-hero .lead{font-size:1.12rem;max-width:62ch;margin:0 0 22px}
+.svc-img{margin:22px 0 0;display:flex;flex-direction:column;gap:6px}
+.svc-img img{display:block;width:100%;aspect-ratio:16/6;object-fit:cover;border:1.5px solid var(--ink)}
+.cols{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px}
+.svc p{margin:0 0 14px;max-width:68ch}
+.steps{list-style:none;margin:0;padding:0;counter-reset:s;display:grid;gap:0;border-top:1px solid var(--rule)}
+.steps li{counter-increment:s;padding:14px 0 14px 52px;border-bottom:1px solid var(--rule);position:relative}
+.steps li::before{content:counter(s,decimal-leading-zero);position:absolute;left:0;top:14px;font-family:var(--mono);color:var(--accent);font-weight:500}
+.steps b{display:block;font-family:var(--display);font-size:1.25rem;font-weight:600}
+.norme{list-style:none;margin:0;padding:0;border:1.5px solid var(--ink);background:var(--sheet)}
+.norme li{padding:10px 14px;border-bottom:1px solid var(--rule);font-size:.93rem}
+.norme li:last-child{border-bottom:0}
+.norme b{font-family:var(--mono);font-weight:500;font-size:.88rem;margin-right:8px}
+.refs{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:20px}
+.ref{border:1.5px solid var(--ink);background:var(--sheet);text-decoration:none;color:var(--ink);display:flex;flex-direction:column}
+.ref img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;border-bottom:1.5px solid var(--ink)}
+.ref div{padding:12px 14px}
+.ref b{display:block;font-family:var(--display);font-size:1.2rem;font-weight:600;line-height:1.15;margin:4px 0}
+.ref span.t{font-size:.88rem;color:var(--muted)}
+.ref:hover b{color:var(--accent)}
+.contact-box{border:1.5px solid var(--ink);background:var(--sheet);padding:24px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
+.contact-box h2{font-size:clamp(1.7rem,3.5vw,2.3rem);margin-bottom:6px}
+.contact-box p{margin:0;color:var(--muted)}
+.contact-box .btns{display:flex;gap:10px;flex-wrap:wrap}
+.cta.fill{background:var(--ink);color:var(--paper)}
+.cta.fill:hover{background:var(--accent);border-color:var(--accent)}
+.others{display:flex;gap:10px 22px;flex-wrap:wrap;font-size:.95rem}
+.crumb{font-size:.85rem;color:var(--muted)}
+.crumb a{color:var(--muted)}
+@media (max-width:820px){.cols{grid-template-columns:1fr;gap:28px}}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="/">
+      <img class="logo" src="/img/logo.png" alt="Logo Ing. Massimo De Masi">
+      <div><b>ING. MASSIMO DE MASI STUDIO</b><span>Prato e Fucecchio</span></div>
+    </a>
+    <nav aria-label="Sezioni">
+      <a href="/#progetti">Progetti</a>
+      <a href="/#chi-sono">Chi sono</a>
+      <a href="/#servizi">Servizi</a>
+      <a href="#contatti">Contatti</a>
+      <a href="/#area-clienti"><span class="nl">Area clienti</span><span class="ns">Clienti</span></a>
+    </nav>
+  </div>
+</header>
+<main>
+  <div class="wrap svc-hero">
+    <p class="crumb"><a href="/">Home</a> · <a href="/#servizi">Servizi</a> · Impianti elettrici e BMS</p>
+    <span class="label">Servizi · Prato, Firenze, Fucecchio</span>
+    <h1>Impianti elettrici, BMS e automazione degli edifici</h1>
+    <p class="lead">Progetto impianti elettrici e speciali per edifici residenziali, artigianali e industriali e i sistemi che li governano: quadri e distribuzione, illuminazione, ricarica dei veicoli e supervisione dell'edificio con BMS e BACS.</p>
+    <a class="cta" href="#contatti">Chiedi un preventivo</a>
+    <figure class="svc-img"><img src="/img/campi-bisenzio-stabilimento-uffici.jpg" alt="Rendering di uno stabilimento produttivo con uffici a Campi Bisenzio"><figcaption class="ai-note">Immagine realizzata con AI a scopo illustrativo.</figcaption></figure>
+  </div>
+  <section class="svc">
+    <div class="wrap cols">
+      <div>
+        <div class="sec-head"><h2>Cosa comprende</h2></div>
+        <ul class="scope"><li>Progetto degli impianti elettrici ai sensi del DM 37/08</li><li>Schemi dei quadri elettrici, distribuzione principale e blindosbarre</li><li>Cabine di trasformazione MT/BT e connessione alla rete di media tensione</li><li>Illuminazione LED, di sicurezza e calcoli illuminotecnici</li><li>Controllo dell'illuminazione DALI e DALI-2 con sensori di presenza e luminosità</li><li>BMS e automazione dell'edificio: classe BACS secondo UNI EN ISO 52120-1</li><li>Predisposizione per la ricarica dei veicoli elettrici</li><li>Computi metrici, direzione lavori e verifiche di cantiere</li></ul>
+      </div>
+      <div>
+        <div class="sec-head"><h2>Il mio approccio</h2></div>
+        <p>Negli edifici di oggi l'impianto elettrico non è solo distribuzione dell'energia: alimenta pompe di calore, fotovoltaico, ricarica dei veicoli e sistemi di controllo. Progettarlo insieme agli altri impianti evita sovradimensionamenti e rende l'edificio gestibile da un unico sistema.</p><p>Con BMS e BACS l'illuminazione, la climatizzazione e i consumi vengono regolati e monitorati in base all'uso reale degli ambienti, con risparmi misurabili nella gestione.</p>
+      </div>
+    </div>
+  </section>
+  <section class="svc">
+    <div class="wrap cols">
+      <div>
+        <div class="sec-head"><h2>Come lavoro</h2></div>
+        <ol class="steps"><li><b>Carichi e utenze</b>Raccolgo le esigenze dell'attività e calcolo potenze e contemporaneità.</li><li><b>Architettura dell'impianto</b>Definisco fornitura, cabina o quadro generale, distribuzione e quadri di zona.</li><li><b>Illuminazione e automazione</b>Progetto illuminazione, controllo DALI e il sistema di supervisione.</li><li><b>Cantiere e verifiche</b>Seguo la realizzazione, verifico i quadri in cantiere e raccolgo la documentazione finale.</li></ol>
+      </div>
+      <div>
+        <div class="sec-head"><h2>Norme di riferimento</h2></div>
+        <ul class="norme"><li><b>DM 37/2008</b>Installazione degli impianti all'interno degli edifici</li><li><b>CEI 64-8</b>Impianti elettrici utilizzatori in bassa tensione</li><li><b>CEI EN 61439</b>Quadri elettrici di bassa tensione</li><li><b>CEI 0-16 / 0-21</b>Connessione alle reti di media e bassa tensione</li><li><b>UNI EN 12464-1</b>Illuminazione dei luoghi di lavoro interni</li><li><b>UNI EN 1838</b>Illuminazione di emergenza</li><li><b>UNI EN 13201</b>Illuminazione stradale</li><li><b>UNI EN ISO 52120-1</b>Automazione e controllo degli edifici (BACS)</li></ul>
+      </div>
+    </div>
+  </section>
+  <section class="svc">
+    <div class="wrap">
+      <div class="sec-head"><h2>Quando serve</h2></div>
+      <ul class="scope"><li>Costruisci o ristrutturi un edificio residenziale, artigianale o industriale</li><li>Devi adeguare quadri elettrici o distribuzione esistenti</li><li>Vuoi ridurre i consumi dell'illuminazione con LED e controllo DALI</li><li>Ti serve una cabina di trasformazione o una nuova fornitura in media tensione</li><li>Devi raggiungere una classe BACS minima o vuoi un sistema di supervisione</li></ul>
+    </div>
+  </section>
+  <section>
+    <div class="wrap">
+      <div class="sec-head"><h2>Progetti dello studio</h2><a class="label" href="/#progetti">Tutti i progetti</a></div>
+      <div class="refs"><a class="ref" href="/#progetti"><img src="/img/campi-bisenzio-stabilimento-uffici.jpg" alt="Rendering: Stabilimento produttivo con uffici"><div><span class="label">Campi Bisenzio (FI) · 013-26</span><b>Stabilimento produttivo con uffici</b><span class="t">Illuminazione LED in DALI, blindosbarre e carriponti, cabina MT/BT, fotovoltaico da 232 kWp e BACS in Classe B.</span></div></a><a class="ref" href="/#progetti"><img src="/img/firenze-castello-illuminazione-pubblica.jpg" alt="Rendering: Illuminazione pubblica di un nuovo quartiere"><div><span class="label">Firenze (FI) · 014-25</span><b>Illuminazione pubblica di un nuovo quartiere</b><span class="t">60 punti luce LED a 4000 K su strade, piazzetta, percorsi e aree verdi, calcolo secondo UNI EN 13201.</span></div></a><a class="ref" href="/#progetti"><img src="/img/campi-bisenzio-4-unita-artigianali.jpg" alt="Rendering: 4 nuove unità artigianali"><div><span class="label">Campi Bisenzio (FI) · 025-26</span><b>4 nuove unità artigianali</b><span class="t">Climatizzazione VRV, fotovoltaico da circa 30 kWp per unità, BMS e illuminazione DALI-2, predisposizione ricarica veicoli.</span></div></a></div>
+    </div>
+  </section>
+  <section id="contatti">
+    <div class="wrap">
+      <div class="contact-box">
+        <div><h2>Parliamo del tuo progetto</h2><p>Studi a Prato (Via Pomeria 82) e Fucecchio (Via Dante 36). Tel. 393 905 6385 · studio@ingdemasi.com</p></div>
+        <div class="btns"><a class="cta fill" href="tel:+393939056385">Chiama</a><a class="cta" href="https://wa.me/393939056385" target="_blank" rel="noopener">WhatsApp</a><a class="cta" href="mailto:studio@ingdemasi.com">Email</a></div>
+      </div>
+      <p class="label" style="margin-top:28px">Altri servizi</p>
+      <div class="others"><a href="/servizi/progettazione-antincendio/">Prevenzione incendi</a><a href="/servizi/fotovoltaico-pompe-di-calore/">Fotovoltaico e pompe di calore</a><a href="/#servizi">Tutti i servizi</a></div>
+    </div>
+  </section>
+</main>
+<footer>
+  <div class="wrap">
+    <span>Ing. Massimo De Masi Studio · P.IVA 01856990971 · Immagini pubblicate sul sito realizzate con AI</span>
+    <span><a href="https://www.instagram.com/ingmassimodemasistudio/" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.linkedin.com/in/massimo-de-masi-6a910573/" target="_blank" rel="noopener">LinkedIn</a> · <a href="/">ingdemasi.com</a></span>
+  </div>
+</footer>
+</body>
+</html>
