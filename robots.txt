@@ -2,5 +2,6 @@ User-agent: *
 Allow: /
 Disallow: /app/clienti.json
 Disallow: /app/partner.json
+Disallow: /firma/
 
 Sitemap: https://www.ingdemasi.com/sitemap.xml
